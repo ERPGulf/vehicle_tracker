@@ -45,16 +45,8 @@ git clone https://github.com/ERPGulf/vehicle_tracker.git
 cd ../
 bench --site your-site install-app tracker_erpgulf
 
-Configuration
+## Configuration
 
 Go to Vehicle Tracking Setting in ERPNext.
 
-**Enter your Vamosys API credentials:
 
-Base URL
-
-Username
-
-Fcode (password field)**
-
-### Set any additional settings, like tracking frequency# vehicle_tracker
