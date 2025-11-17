@@ -41,8 +41,8 @@ class VehicleTrackingDashboard {
 
     render_cards(data) {
         const metrics = [
-            { label: 'Running', value: data.running },
-            { label: 'Standing', value: data.standing },
+            { label: 'Moving', value: data.moving },
+            { label: 'Stopped', value: data.stopped },
             { label: 'Parked', value: data.parked },
             { label: 'AC ON', value: data.ac_on },
             { label: 'AC OFF', value: data.ac_off },
@@ -94,17 +94,15 @@ class VehicleTrackingDashboard {
     }
 
     draw_charts(data) {
-        // Vehicle Status Chart
         new Chart(document.getElementById("vehicleStatusChart").getContext("2d"), {
             type: "pie",
             data: {
-                labels: ["Running", "Standing", "Parked"],
-                datasets: [{ data: [data.running, data.standing, data.parked], backgroundColor: ["#28a745", "#ffc107", "#dc3545"] }]
+                labels: ["Moving", "Stopped", "Parked"],
+                datasets: [{ data: [data.moving, data.stopped, data.parked], backgroundColor: ["#28a745", "#ffc107", "#dc3545"] }]
             },
             options: { responsive: true, plugins: { legend: { position: "bottom" }, title: { display: true, text: "Vehicle Status Distribution" } } }
         });
 
-        // AC Status Chart
         new Chart(document.getElementById("acStatusChart").getContext("2d"), {
             type: "pie",
             data: {
@@ -114,7 +112,6 @@ class VehicleTrackingDashboard {
             options: { responsive: true, plugins: { legend: { position: "bottom" }, title: { display: true, text: "AC Status" } } }
         });
 
-        // Distance Chart
         new Chart(document.getElementById("distanceChart").getContext("2d"), {
             type: "bar",
             data: { labels: data.distance_chart.labels, datasets: [{ label: "Distance (km)", data: data.distance_chart.values, backgroundColor: "#007bff" }] },
@@ -134,7 +131,7 @@ class VehicleTrackingDashboard {
                 <td>${v.reg_no || '-'}</td>
                 <td>${v.position || '-'}</td>
                 <td>${v.last_comm || '-'}</td>
-                <td>${v.duration || '-'}</td>
+                <td>${v.today_workinghours || '00:00:00'}</td>
                 <td>${v.kms || 0} km</td>
                 <td>${v.ac || '-'}</td>
             </tr>
@@ -146,9 +143,9 @@ class VehicleTrackingDashboard {
                     <tr>
                         <th>Vehicle</th>
                         <th>Reg No</th>
-                        <th>Status</th>
+                        <th>Position</th>
                         <th>Last Communication</th>
-                        <th>Duration</th>
+                        <th>Today Working Hours</th>
                         <th>Kms</th>
                         <th>AC</th>
                     </tr>

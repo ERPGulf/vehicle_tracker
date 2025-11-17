@@ -242,3 +242,11 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+scheduler_events = {
+    "cron": {
+        "* * * * *": [  # runs every minute
+            "tracker_erpgulf.tracker_erpgulf.schedule.scheduled_vehicle_tracking"
+        ]
+    }
+}
+fixtures = [ {"dt": "Custom Field","filters": [["module", "=", "Tracker Erpgulf"]] }]

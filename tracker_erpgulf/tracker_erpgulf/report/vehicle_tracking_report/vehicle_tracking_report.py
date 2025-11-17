@@ -1,24 +1,16 @@
-# Copyright (c) 2025, ERPGulf and contributors
-# For license information, please see license.txt
-
 import frappe
 from frappe.utils import getdate
 
 def execute(filters=None):
     """
-    Execute function for Vehicle Tracking Report.
+    Vehicle Tracking Report
     Supports filtering by vehicle and date range.
+    Includes: speed, status, position, expiry_date, gmap, is_over_speed
     """
     filters = filters or {}
     vehicle = filters.get("vehicle")
-    from_date = filters.get("from_date")
-    to_date = filters.get("to_date")
-
-    # Default to today if no dates provided
-    if not from_date:
-        from_date = getdate()
-    if not to_date:
-        to_date = getdate()
+    from_date = filters.get("from_date") or getdate()
+    to_date = filters.get("to_date") or getdate()
 
     # Build SQL query
     query = """
@@ -27,14 +19,22 @@ def execute(filters=None):
             reg_no,
             position,
             last_comm,
-            duration,
+            today_workinghours,
             kms,
-            ac AS ac_status
+            ac AS ac_status,
+            speed,
+            status,
+            expiry_date,
+            gmap,
+            is_over_speed
         FROM `tabVehicle Tracking System`
         WHERE last_comm BETWEEN %(from_date)s AND %(to_date)s
     """
 
-    query_filters = {"from_date": f"{from_date} 00:00:00", "to_date": f"{to_date} 23:59:59"}
+    query_filters = {
+        "from_date": f"{from_date} 00:00:00",
+        "to_date": f"{to_date} 23:59:59"
+    }
 
     if vehicle:
         query += " AND vehicle_name = %(vehicle)s"
@@ -43,15 +43,20 @@ def execute(filters=None):
     # Execute query
     data = frappe.db.sql(query, query_filters, as_dict=True)
 
-    # Optionally, define report columns
+    # Define report columns
     columns = [
         {"fieldname": "vehicle_name", "label": "Vehicle", "fieldtype": "Data", "width": 150},
         {"fieldname": "reg_no", "label": "Reg No", "fieldtype": "Data", "width": 120},
-        {"fieldname": "position", "label": "Position", "fieldtype": "Data", "width": 150},
+        {"fieldname": "position", "label": "Position", "fieldtype": "Data", "width": 100},
         {"fieldname": "last_comm", "label": "Last Communication", "fieldtype": "Datetime", "width": 180},
-        {"fieldname": "duration", "label": "Duration", "fieldtype": "Data", "width": 120},
+        {"fieldname": "today_workinghours", "label": "Today Working Hours", "fieldtype": "Data", "width": 120},
         {"fieldname": "kms", "label": "Kms", "fieldtype": "Float", "width": 100},
         {"fieldname": "ac_status", "label": "AC Status", "fieldtype": "Data", "width": 100},
+        {"fieldname": "speed", "label": "Speed", "fieldtype": "Float", "width": 100},
+        {"fieldname": "status", "label": "Status", "fieldtype": "Data", "width": 100},
+        {"fieldname": "expiry_date", "label": "Expiry Date", "fieldtype": "Date", "width": 120},
+        {"fieldname": "gmap", "label": "Google Map", "fieldtype": "Data", "width": 150},
+        {"fieldname": "is_over_speed", "label": "Over Speed", "fieldtype": "Check", "width": 80},
     ]
 
     return columns, data

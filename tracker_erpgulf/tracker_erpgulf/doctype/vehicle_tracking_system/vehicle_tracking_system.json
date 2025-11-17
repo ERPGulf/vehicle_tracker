@@ -7,23 +7,82 @@
  "field_order": [
   "vehicle_tracking_details_section",
   "vehicle_name",
-  "reg_no",
+  "short_name",
+  "vehicle_model",
   "last_seen",
+  "licence_type",
+  "reg_no",
   "last_comm",
+  "date",
+  "vehicle_type_label",
   "driver",
   "driver_mobile",
+  "device_id",
+  "device_model",
+  "device_volt",
+  "org_id",
   "kms",
+  "device_status",
+  "made_in",
   "column_break_ubzt",
   "speed",
+  "direction",
+  "celsius",
+  "vehilce_type",
+  "over_speed_limit",
+  "onboard_date",
+  "trip_name",
+  "chassis_number",
+  "gps_sim_no",
+  "fuel_litre",
+  "forward_or_backward",
+  "safety_parking",
+  "fcode",
+  "oprname",
+  "sensor_based_vehicle_mode",
+  "column_break_jqfu",
   "position",
-  "duration",
+  "status",
   "veh_battery",
   "ac",
+  "distance_covered",
+  "engine_status",
+  "calibrate_mode",
+  "ignition_status",
+  "vehicle_mode",
+  "tank_size",
+  "insidegeofence",
+  "is_over_speed",
+  "live",
+  "vehicle_busy",
+  "camera_enabled",
+  "communicating_port_no",
+  "rig_mode",
+  "column_break_yyrj",
   "fuel_ltrs",
-  "celsius",
+  "fuel_sensor_type",
+  "date_sec",
+  "today_workinghours",
+  "parked_time",
+  "moving_time",
+  "idle_time",
+  "time_zone",
+  "alert",
+  "error",
+  "route_name",
+  "altitude",
+  "latitude",
+  "longitude",
+  "color",
+  "expirystatus",
+  "expired",
+  "expiry_date",
+  "expiry_days",
   "section_break_kyri",
   "nearest_location",
-  "gmap"
+  "gmap",
+  "column_break_knyn",
+  "more_details"
  ],
  "fields": [
   {
@@ -34,38 +93,46 @@
   {
    "fieldname": "vehicle_name",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Vehicle Name",
-   "options": "Vehicle"
+   "options": "Vehicle",
+   "read_only": 1
   },
   {
    "fieldname": "reg_no",
    "fieldtype": "Data",
-   "label": "Reg No"
+   "label": "Reg No",
+   "read_only": 1
   },
   {
    "fieldname": "last_seen",
    "fieldtype": "Data",
-   "label": "Last Seen"
+   "label": "Last Comm",
+   "read_only": 1
   },
   {
    "fieldname": "last_comm",
    "fieldtype": "Datetime",
-   "label": "Last Comm"
+   "label": "Last Seen",
+   "read_only": 1
   },
   {
    "fieldname": "driver",
    "fieldtype": "Data",
-   "label": "Driver"
+   "label": "Driver",
+   "read_only": 1
   },
   {
    "fieldname": "driver_mobile",
    "fieldtype": "Data",
-   "label": "Driver Mobile"
+   "label": "Driver Mobile",
+   "read_only": 1
   },
   {
    "fieldname": "kms",
    "fieldtype": "Float",
-   "label": "Kms"
+   "label": "Odo Distance",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_ubzt",
@@ -74,39 +141,41 @@
   {
    "fieldname": "speed",
    "fieldtype": "Int",
-   "label": "Speed"
+   "label": "Speed",
+   "read_only": 1
   },
   {
    "fieldname": "position",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Position",
-   "options": "Green - Running\nOrange - Vehicle Standing\nBlack - Vehicle Parked"
-  },
-  {
-   "fieldname": "duration",
-   "fieldtype": "Data",
-   "label": "Duration (HH:MM:SS)"
+   "options": "P - Parked Vehicle\nM - Moving Vehicle\nS - Stopped Vehicle",
+   "read_only": 1
   },
   {
    "fieldname": "veh_battery",
    "fieldtype": "Data",
-   "label": "Vehicle Battery"
+   "label": "Power Status",
+   "read_only": 1
   },
   {
    "fieldname": "ac",
    "fieldtype": "Select",
    "label": "A/C",
-   "options": "ON\nOFF"
+   "options": "ON\nOFF",
+   "read_only": 1
   },
   {
    "fieldname": "fuel_ltrs",
    "fieldtype": "Float",
-   "label": "Fuel (ltrs)"
+   "label": "Fuel (ltrs)",
+   "read_only": 1
   },
   {
    "fieldname": "celsius",
    "fieldtype": "Float",
-   "label": "Celsius"
+   "label": "Temperature",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_kyri",
@@ -115,17 +184,380 @@
   {
    "fieldname": "nearest_location",
    "fieldtype": "Small Text",
-   "label": "Nearest Location"
+   "label": "Nearest Location",
+   "read_only": 1
   },
   {
    "fieldname": "gmap",
    "fieldtype": "Data",
-   "label": "GMap"
+   "label": "GMap",
+   "read_only": 1
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Data",
+   "label": "Latitude",
+   "read_only": 1
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Data",
+   "label": "Longitude",
+   "read_only": 1
+  },
+  {
+   "fieldname": "device_model",
+   "fieldtype": "Data",
+   "label": "Device Model",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehilce_type",
+   "fieldtype": "Data",
+   "label": "Vehilce Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "over_speed_limit",
+   "fieldtype": "Float",
+   "label": "Over Speed Limit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ignition_status",
+   "fieldtype": "Select",
+   "label": "Ignition Status",
+   "options": "ON\nOFF",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "ON\nOFF",
+   "read_only": 1
+  },
+  {
+   "fieldname": "alert",
+   "fieldtype": "Data",
+   "label": "Alert",
+   "read_only": 1
+  },
+  {
+   "fieldname": "parked_time",
+   "fieldtype": "Data",
+   "label": "Parked Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "moving_time",
+   "fieldtype": "Data",
+   "label": "Moving Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "idle_time",
+   "fieldtype": "Data",
+   "label": "Idle Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fuel_sensor_type",
+   "fieldtype": "Data",
+   "label": "Fuel Sensor Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "device_id",
+   "fieldtype": "Data",
+   "label": "Device Id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "chassis_number",
+   "fieldtype": "Data",
+   "label": "Chassis Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "trip_name",
+   "fieldtype": "Data",
+   "label": "Trip Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jqfu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "licence_type",
+   "fieldtype": "Data",
+   "label": "Licence Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "direction",
+   "fieldtype": "Data",
+   "label": "Direction",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_model",
+   "fieldtype": "Data",
+   "label": "Vehicle Model",
+   "read_only": 1
+  },
+  {
+   "fieldname": "engine_status",
+   "fieldtype": "Data",
+   "label": "Engine Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "calibrate_mode",
+   "fieldtype": "Data",
+   "label": "Calibrate Mode",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_mode",
+   "fieldtype": "Data",
+   "label": "Vehicle Mode",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Data",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "distance_covered",
+   "fieldtype": "Data",
+   "label": "Distance Covered",
+   "read_only": 1
+  },
+  {
+   "fieldname": "altitude",
+   "fieldtype": "Data",
+   "label": "Altitude",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tank_size",
+   "fieldtype": "Float",
+   "label": "Tank Size",
+   "read_only": 1
+  },
+  {
+   "fieldname": "device_volt",
+   "fieldtype": "Float",
+   "label": "Device Volt",
+   "read_only": 1
+  },
+  {
+   "fieldname": "insidegeofence",
+   "fieldtype": "Data",
+   "label": "Inside GeoFence",
+   "read_only": 1
+  },
+  {
+   "fieldname": "is_over_speed",
+   "fieldtype": "Select",
+   "label": "Is Over Speed",
+   "options": "YES\nNO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_busy",
+   "fieldtype": "Select",
+   "label": "Vehicle Busy",
+   "options": "YES\nNO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fuel_litre",
+   "fieldtype": "Float",
+   "label": "Fuel Litre",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gps_sim_no",
+   "fieldtype": "Data",
+   "label": "GPS Sim No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sensor_based_vehicle_mode",
+   "fieldtype": "Small Text",
+   "label": "Sensor Based Vehicle Mode",
+   "read_only": 1
+  },
+  {
+   "fieldname": "today_workinghours",
+   "fieldtype": "Data",
+   "label": "Today WorkingHours",
+   "read_only": 1
+  },
+  {
+   "fieldname": "oprname",
+   "fieldtype": "Data",
+   "label": "Operator Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "short_name",
+   "fieldtype": "Data",
+   "label": "Short Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "camera_enabled",
+   "fieldtype": "Select",
+   "label": "Camera Enabled",
+   "options": "ON\nOFF",
+   "read_only": 1
+  },
+  {
+   "fieldname": "communicating_port_no",
+   "fieldtype": "Data",
+   "label": "Communicating Port No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "live",
+   "fieldtype": "Select",
+   "label": "Live",
+   "options": "YES\nNO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_type_label",
+   "fieldtype": "Data",
+   "label": "Vehicle Type Label",
+   "read_only": 1
+  },
+  {
+   "fieldname": "forward_or_backward",
+   "fieldtype": "Data",
+   "label": "Forward Or Backward",
+   "read_only": 1
+  },
+  {
+   "fieldname": "error",
+   "fieldtype": "Data",
+   "label": "Error",
+   "read_only": 1
+  },
+  {
+   "fieldname": "expired",
+   "fieldtype": "Select",
+   "label": "Expired",
+   "options": "YES\nNO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "expiry_days",
+   "fieldtype": "Data",
+   "label": "Expiry Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "route_name",
+   "fieldtype": "Data",
+   "label": "Route Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "safety_parking",
+   "fieldtype": "Data",
+   "label": "Safety Parking",
+   "read_only": 1
+  },
+  {
+   "fieldname": "time_zone",
+   "fieldtype": "Data",
+   "label": "Time Zone",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fcode",
+   "fieldtype": "Data",
+   "label": "Fcode",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rig_mode",
+   "fieldtype": "Select",
+   "label": "Rig Mode",
+   "options": "Enable\nDisable",
+   "read_only": 1
+  },
+  {
+   "fieldname": "org_id",
+   "fieldtype": "Data",
+   "label": "Org ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_yyrj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "onboard_date",
+   "fieldtype": "Date",
+   "label": "Onboard Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date_sec",
+   "fieldtype": "Data",
+   "label": "Date Sec",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_knyn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "more_details",
+   "fieldtype": "Small Text",
+   "label": "More Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Data",
+   "label": "Color",
+   "read_only": 1
+  },
+  {
+   "fieldname": "device_status",
+   "fieldtype": "Data",
+   "label": "Device Status"
+  },
+  {
+   "fieldname": "expirystatus",
+   "fieldtype": "Select",
+   "label": "Expiry Status",
+   "options": "YES\nNO"
+  },
+  {
+   "fieldname": "made_in",
+   "fieldtype": "Data",
+   "label": " Made In"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-13 11:16:33.465088",
+ "modified": "2025-11-17 14:35:33.410879",
  "modified_by": "Administrator",
  "module": "Tracker ERPGulf",
  "name": "Vehicle Tracking System",

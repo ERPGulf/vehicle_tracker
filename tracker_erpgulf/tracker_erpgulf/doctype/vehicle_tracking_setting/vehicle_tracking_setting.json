@@ -1,0 +1,69 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-17 10:09:41.596514",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle_tracking_setting_section",
+  "base_url",
+  "frequency",
+  "column_break_sohk",
+  "username",
+  "fcode"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle_tracking_setting_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Tracking Setting"
+  },
+  {
+   "fieldname": "base_url",
+   "fieldtype": "Data",
+   "label": "Base URL"
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "label": "Username"
+  },
+  {
+   "fieldname": "fcode",
+   "fieldtype": "Password",
+   "label": "Fcode"
+  },
+  {
+   "fieldname": "column_break_sohk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Data",
+   "label": "Frequency(Minutes)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-11-17 14:13:53.498452",
+ "modified_by": "Administrator",
+ "module": "Tracker ERPGulf",
+ "name": "Vehicle Tracking Setting",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
