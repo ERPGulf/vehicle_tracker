@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2025-11-12 15:39:12.778295",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2025-11-12 15:43:00.380990",
+ "modified_by": "Administrator",
+ "module": "Tracker ERPGulf",
+ "name": "vehicle-tracking-dashboard",
+ "owner": "Administrator",
+ "page_name": "vehicle-tracking-dashboard",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Vehicle Tracking Dashboard"
+}

@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-13 11:07:33.929752",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle_tracking_details_section",
+  "vehicle_name",
+  "reg_no",
+  "last_seen",
+  "last_comm",
+  "driver",
+  "driver_mobile",
+  "kms",
+  "column_break_ubzt",
+  "speed",
+  "position",
+  "duration",
+  "veh_battery",
+  "ac",
+  "fuel_ltrs",
+  "celsius",
+  "section_break_kyri",
+  "nearest_location",
+  "gmap"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle_tracking_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Tracking Details"
+  },
+  {
+   "fieldname": "vehicle_name",
+   "fieldtype": "Link",
+   "label": "Vehicle Name",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "reg_no",
+   "fieldtype": "Data",
+   "label": "Reg No"
+  },
+  {
+   "fieldname": "last_seen",
+   "fieldtype": "Data",
+   "label": "Last Seen"
+  },
+  {
+   "fieldname": "last_comm",
+   "fieldtype": "Datetime",
+   "label": "Last Comm"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Data",
+   "label": "Driver"
+  },
+  {
+   "fieldname": "driver_mobile",
+   "fieldtype": "Data",
+   "label": "Driver Mobile"
+  },
+  {
+   "fieldname": "kms",
+   "fieldtype": "Float",
+   "label": "Kms"
+  },
+  {
+   "fieldname": "column_break_ubzt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "speed",
+   "fieldtype": "Int",
+   "label": "Speed"
+  },
+  {
+   "fieldname": "position",
+   "fieldtype": "Select",
+   "label": "Position",
+   "options": "Green - Running\nOrange - Vehicle Standing\nBlack - Vehicle Parked"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Data",
+   "label": "Duration (HH:MM:SS)"
+  },
+  {
+   "fieldname": "veh_battery",
+   "fieldtype": "Data",
+   "label": "Vehicle Battery"
+  },
+  {
+   "fieldname": "ac",
+   "fieldtype": "Select",
+   "label": "A/C",
+   "options": "ON\nOFF"
+  },
+  {
+   "fieldname": "fuel_ltrs",
+   "fieldtype": "Float",
+   "label": "Fuel (ltrs)"
+  },
+  {
+   "fieldname": "celsius",
+   "fieldtype": "Float",
+   "label": "Celsius"
+  },
+  {
+   "fieldname": "section_break_kyri",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "nearest_location",
+   "fieldtype": "Small Text",
+   "label": "Nearest Location"
+  },
+  {
+   "fieldname": "gmap",
+   "fieldtype": "Data",
+   "label": "GMap"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-13 11:16:33.465088",
+ "modified_by": "Administrator",
+ "module": "Tracker ERPGulf",
+ "name": "Vehicle Tracking System",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
