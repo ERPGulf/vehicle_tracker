@@ -20,8 +20,7 @@ def scheduled_vehicle_tracking(force_run=False):
         if not last_run or (now - last_run).total_seconds() >= frequency_minutes * 60:
             create_vehicle_tracking()
             frappe.cache().set_value(cache_key, now.isoformat())
-        else:
-            frappe.logger().info("Frequency interval not reached. Skipping execution.")
+       
 
     except Exception as e:
         frappe.log_error(f"Scheduler Exception: {str(e)}", "Vehicle Tracker Error")
