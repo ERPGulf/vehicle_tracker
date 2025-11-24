@@ -249,4 +249,8 @@ scheduler_events = {
         ]
     }
 }
+doctype_js = {
+    "Vehicle": "public/js/vehicle_buttons.js"
+}
+
 fixtures = [ {"dt": "Custom Field","filters": [["module", "=", "Tracker Erpgulf"]] }]
