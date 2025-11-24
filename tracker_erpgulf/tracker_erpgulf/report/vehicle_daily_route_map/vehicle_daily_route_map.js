@@ -115,7 +115,7 @@ frappe.query_reports["Vehicle Daily Route Map"] = {
             if (!vehicle || !date) return;
 
             frappe.call({
-                method: "myinvois_erpgulf.vehicle.get_nearest_locations",
+                method: "tracker_erpgulf.tracker_erpgulf.vehicle.get_nearest_locations",
                 args: { vehicle, route_date: date },
                 callback: function (r) {
                     console.log("📌 Python Returned:", r.message);
