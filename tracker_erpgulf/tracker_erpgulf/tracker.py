@@ -18,7 +18,12 @@ def create_vehicle_tracking():
         base_url = settings.base_url          
         username = settings.username          
         fcode = settings.get_password("fcode")            
+        # password = settings.get_password("password")  # New
 
+        # # ❌ Block API call if no password
+        # if not password:
+        #     frappe.log_error("Password missing in Vehicle Tracking Setting", "VT Password Validation Error")
+        #     return {"status": "error", "message": "Please set the password in Vehicle Tracking Setting"}
         url = base_url
         params = {
             "providerName": username,

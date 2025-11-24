@@ -1,0 +1,107 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"YBtam4_DV5\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Tracker ERPGulf</span>\",\"col\":12}},{\"id\":\"NDQT1QBC9s\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vehicle Tracking Dashboard\",\"col\":4}},{\"id\":\"V0rzh7tyjK\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Tracking Setup\",\"col\":4}},{\"id\":\"9WJaPPEsRJ\",\"type\":\"card\",\"data\":{\"card_name\":\"Tracker Reports\",\"col\":4}},{\"id\":\"Z_6ISICY6b\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Vehicle List\",\"col\":6}},{\"id\":\"IXY3mRBvKc\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Vehicle Tracking System\",\"col\":6}}]",
+ "creation": "2025-11-24 09:59:20.789312",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "map",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Tracker ERPGulf",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Tracking Setup",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Tracking Setting",
+   "link_count": 0,
+   "link_to": "Vehicle Tracking Setting",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "vehicle List",
+   "link_count": 0,
+   "link_to": "Vehicle",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tracker Reports",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Vehicle Tracking Report",
+   "link_count": 0,
+   "link_to": "Vehicle Tracking Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Vehicle Daily Route Map",
+   "link_count": 0,
+   "link_to": "Vehicle Daily Route Map",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-11-24 10:12:08.591055",
+ "modified_by": "Administrator",
+ "module": "Tracker ERPGulf",
+ "name": "Tracker ERPGulf",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Vehicle Tracking System",
+   "label": "Vehicle Tracking System",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Vehicle",
+   "label": "Vehicle List",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 7.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Vehicle Tracking Dashboard",
+   "link_to": "vehicle-tracking-dashboard",
+   "type": "Page"
+  }
+ ],
+ "title": "Tracker ERPGulf"
+}
