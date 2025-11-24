@@ -1,14 +1,10 @@
 import frappe
 from datetime import datetime, timezone
 from tracker_erpgulf.tracker_erpgulf.tracker import create_vehicle_tracking
-def scheduled_vehicle_tracking(force_run=True):
+def scheduled_vehicle_tracking(force_run=False):
     try:
-        # frappe.log_error("Scheduler triggered", "Vehicle Tracker Debug")
-
-        # Fetch frequency from settings and ensure it's a number
         settings = frappe.get_single("Vehicle Tracking Setting")
         frequency_minutes = float(settings.frequency)
-     
 
         cache_key = "vehicle_tracking_last_run"
         last_run_str = frappe.cache().get_value(cache_key)
@@ -21,16 +17,11 @@ def scheduled_vehicle_tracking(force_run=True):
             except Exception:
                 last_run = None
 
-        # frappe.log_error(f"Last run: {last_run}, Frequency: {frequency_minutes} min", "Vehicle Tracker Debug")
-
-        # Decide whether to run
-        if force_run or not last_run or (now - last_run).total_seconds() >= frequency_minutes * 60:
-            # frappe.log_error("hi")
+        if not last_run or (now - last_run).total_seconds() >= frequency_minutes * 60:
             create_vehicle_tracking()
             frappe.cache().set_value(cache_key, now.isoformat())
-            # frappe.log_error("create_vehicle_tracking executed successfully", "Vehicle Tracker Debug")
         else:
-            frappe.log_error("Frequency interval not reached. Skipping execution.", "Vehicle Tracker Debug")
+            frappe.logger().info("Frequency interval not reached. Skipping execution.")
 
     except Exception as e:
         frappe.log_error(f"Scheduler Exception: {str(e)}", "Vehicle Tracker Error")
