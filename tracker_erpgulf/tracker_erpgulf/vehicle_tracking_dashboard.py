@@ -2,7 +2,7 @@ import frappe
 from frappe.utils import getdate, nowdate
 from datetime import datetime
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_dashboard_data():
     today = getdate(nowdate())
     start_of_day = datetime.combine(today, datetime.min.time())
